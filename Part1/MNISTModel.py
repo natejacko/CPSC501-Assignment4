@@ -10,8 +10,7 @@ x_train, x_test = x_train / 255.0, x_test / 255.0
 print("--Make model--")
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),
-  tf.keras.layers.Dense(256, activation='relu'),
-  tf.keras.layers.Dropout(0.1),
+  tf.keras.layers.Dense(512, activation='relu'),
   tf.keras.layers.Dense(10, activation='softmax')
 ])
 model.compile(optimizer='Adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
