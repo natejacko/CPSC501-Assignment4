@@ -74,8 +74,10 @@ preprocessing_layer = tf.keras.layers.DenseFeatures(categorical_columns+numeric_
 # Build the Keras model
 model = tf.keras.Sequential([
     preprocessing_layer,
-    tf.keras.layers.Dense(256, activation='relu'),
-    tf.keras.layers.Dense(256, activation='relu'),
+    tf.keras.layers.Dense(32, kernel_regularizer=tf.keras.regularizers.l2(0.01), activation='relu'),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dense(32, kernel_regularizer=tf.keras.regularizers.l2(0.01), activation='relu'),
+    tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(1, activation='sigmoid'),
 ])
 
