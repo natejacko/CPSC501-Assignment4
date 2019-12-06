@@ -10,6 +10,8 @@ print("--Process data--")
 print(len(y_train))
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
+# Model based off model found in TensorFlow 2 quickstart tutorial
+# https://www.tensorflow.org/tutorials/quickstart/beginner
 print("--Make model--")
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),

@@ -7,6 +7,8 @@ mnist = tf.keras.datasets.mnist
 print("--Process data--")
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
+# Model based on model from TensorFlow 2 quickstart tutorial
+# https://www.tensorflow.org/tutorials/quickstart/beginner
 print("--Make model--")
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),

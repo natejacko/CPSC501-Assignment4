@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 import functools
 
+# CSV file loading from TensorFlow 2 tutorial on loading CSV data
+# https://www.tensorflow.org/tutorials/load_data/csv
+
 # Numerical preprocessor to pack list of numerical features into single column
 class PackNumericFeatures(object):
     def __init__(self, names):
@@ -72,6 +75,8 @@ print("--Make model--")
 preprocessing_layer = tf.keras.layers.DenseFeatures(categorical_columns+numeric_columns)
 
 # Build the Keras model
+# Model based off TensorFlow 2 tutorial on overfitting and underfitting
+# https://www.tensorflow.org/tutorials/keras/overfit_and_underfit
 model = tf.keras.Sequential([
     preprocessing_layer,
     tf.keras.layers.Dense(32, kernel_regularizer=tf.keras.regularizers.l2(0.01), activation='relu'),
